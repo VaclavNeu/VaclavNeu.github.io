@@ -1,0 +1,81 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Služby | Návrh a instalace automatického zavlažování</title>
+    <meta name="description" content="Nabízíme návrh, instalaci, nastavení i servis automatického zavlažování pro zahrady a pozemky.">
+    <link rel="canonical" href="https://tvoje-domena.cz/Pages/Sluzby.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../app.css" />
+    <link rel="stylesheet" href="../Layout/Navbar.css" />
+    <link rel="stylesheet" href="../Layout/Footer.css" />
+    <link rel="stylesheet" href="../Pages/Sluzby.css" />
+</head>
+<body>
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div id="navbar"></div>
+
+    <section class="services-page">
+        <div class="services-hero">
+            <div class="services-hero-content">
+                <span class="hero-badge">Naše služby</span>
+                <h1>Kompletní realizace exteriérů na míru</h1>
+                <p>Navrhujeme a realizujeme funkční i estetická řešení pro automatické zavlažování, jezírka a venkovní osvětlení.</p>
+            </div>
+        </div>
+
+        <section class="services-list">
+            <div class="section-header reveal">
+                <span class="section-tag">Co nabízíme</span>
+                <h2 style="font-size: 40px">Naše služby</h2>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card reveal reveal-delay-1" onclick="showServiceDetail('zavlazovani', this)">
+                    <h3>1. Zavlažování</h3>
+                    <p>Navrhujeme a instalujeme automatické zavlažovací systémy pro rodinné zahrady, parky i větší venkovní plochy.</p>
+                </article>
+
+                <article class="service-card reveal reveal-delay-2" onclick="showServiceDetail('jezirka', this)">
+                    <h3>2. Jezírka</h3>
+                    <p>Realizujeme okrasná i koupací jezírka, vodní prvky a související technologie.</p>
+                </article>
+
+                <article class="service-card reveal reveal-delay-3" onclick="showServiceDetail('osvetleni', this)">
+                    <h3>3. Osvětlení</h3>
+                    <p>Dodáváme venkovní osvětlení pro bezpečnost, atmosféru i zvýraznění prostoru.</p>
+                </article>
+            </div>
+
+            <section class="service-detail reveal hidden" id="service-detail">
+                <div class="service-detail-inner">
+                    <div class="service-detail-top">
+                        <div class="service-detail-content">
+                            <span class="section-tag" id="service-detail-tag">Detail služby</span>
+                            <h2 id="service-detail-title">Detail služby</h2>
+                            <div class="service-detail-points" id="service-detail-points"></div>
+                        </div>
+                    </div>
+
+                    <div class="service-detail-bottom">
+                        <div class="service-detail-text-block">
+                            <h3 id="service-detail-subtitle"></h3>
+                            <div id="service-detail-text"></div>
+                        </div>
+
+                        <div class="service-note" id="service-detail-note"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <div id="footer"></div>
+    <script src="../app.js"></script>
+</body>
