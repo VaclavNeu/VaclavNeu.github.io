@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://tvoje-domena.cz/sitemap.xml
