@@ -3,12 +3,12 @@ async function loadPartials() {
     const footer = document.getElementById("footer");
 
     if (navbar) {
-        const navbarResponse = await fetch("../Layout/navbar.html");
+        const navbarResponse = await fetch("../Layout/Navbar.html");
         navbar.innerHTML = await navbarResponse.text();
     }
 
     if (footer) {
-        const footerResponse = await fetch("../Layout/footer.html");
+        const footerResponse = await fetch("../Layout/Footer.html");
         footer.innerHTML = await footerResponse.text();
     }
 }
