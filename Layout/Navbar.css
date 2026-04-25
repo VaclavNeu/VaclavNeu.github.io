@@ -1,11 +1,29 @@
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: relative;
+    z-index: 1000;
+    width: 100%;
     background: var(--nav-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
+    transition:
+        background 0.28s ease,
+        backdrop-filter 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+nav.is-floating {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 nav ul {
@@ -20,6 +38,11 @@ nav li {
     height: 68px;
     display: flex;
     align-items: center;
+    transition: height 0.28s ease;
+}
+
+nav.is-floating li {
+    height: 58px;
 }
 
 nav a {
@@ -34,14 +57,22 @@ nav a {
     font-weight: 600;
     letter-spacing: 0.3px;
     position: relative;
-    transition: color 0.2s ease;
+    transition:
+        color 0.2s ease,
+        padding 0.28s ease,
+        font-size 0.28s ease;
+}
+
+nav.is-floating a {
+    padding: 0 20px;
+    font-size: 0.86rem;
 }
 
 nav a:hover {
     color: var(--green);
 }
 
-/* Underline hover */
+/* underline hover */
 nav a::after {
     content: "";
     position: absolute;
@@ -67,6 +98,11 @@ nav img.logo {
     height: 48px;
     padding: 0;
     object-fit: contain;
+    transition: height 0.28s ease;
+}
+
+nav.is-floating img.logo {
+    height: 42px;
 }
 
 nav li:first-child {
@@ -87,6 +123,11 @@ nav li:first-child {
     cursor: pointer;
     transition: all 0.3s ease;
     margin: 0 8px;
+}
+
+nav.is-floating .theme-toggle {
+    width: 36px;
+    height: 36px;
 }
 
 .theme-toggle:hover {
@@ -160,5 +201,9 @@ nav li:first-child {
 
     nav img.logo {
         height: 36px;
+    }
+
+    nav.is-floating img.logo {
+        height: 34px;
     }
 }

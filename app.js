@@ -2,15 +2,46 @@ async function loadPartials() {
     const navbar = document.getElementById("navbar");
     const footer = document.getElementById("footer");
 
+    const isInPagesFolder = window.location.pathname.includes("/Pages/");
+    const basePath = isInPagesFolder ? "../" : "";
+
     if (navbar) {
-        const navbarResponse = await fetch("../Layout/Navbar.html");
+        const navbarResponse = await fetch(basePath + "Layout/Navbar.html");
         navbar.innerHTML = await navbarResponse.text();
     }
 
     if (footer) {
-        const footerResponse = await fetch("../Layout/Footer.html");
+        const footerResponse = await fetch(basePath + "Layout/Footer.html");
         footer.innerHTML = await footerResponse.text();
     }
+}
+
+function initFloatingNavbar() {
+    const navbarHost = document.getElementById("navbar");
+    if (!navbarHost) return;
+
+    const nav = navbarHost.querySelector("nav");
+    if (!nav) return;
+
+    let navbarTop = navbarHost.offsetTop;
+    let navHeight = nav.offsetHeight;
+
+    function updateNavbar() {
+        navbarTop = navbarHost.offsetTop;
+        navHeight = nav.offsetHeight;
+
+        if (window.scrollY > navbarTop) {
+            nav.classList.add("is-floating");
+            navbarHost.style.minHeight = navHeight + "px";
+        } else {
+            nav.classList.remove("is-floating");
+            navbarHost.style.minHeight = "";
+        }
+    }
+
+    updateNavbar();
+    window.addEventListener("scroll", updateNavbar, { passive: true });
+    window.addEventListener("resize", updateNavbar);
 }
 
 /* Dark/Light mode */
@@ -29,7 +60,6 @@ function toggleTheme() {
     }
 })();
 
-/* Scroll reveal */
 function initReveal() {
     const obs = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
@@ -58,6 +88,7 @@ function hideLoader() {
 
 document.addEventListener("DOMContentLoaded", async function () {
     await loadPartials();
+    initFloatingNavbar();
     setTimeout(hideLoader, 400);
     initReveal();
 });
@@ -66,6 +97,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 if (typeof Blazor !== "undefined") {
     Blazor.addEventListener("enhancedload", function () {
         initReveal();
+        initFloatingNavbar();
     });
 }
 
@@ -89,12 +121,14 @@ const serviceDetails = {
         subtitle: "Pro jaké zahrady děláme zavlažovací systémy?",
         note: "Před zimou je nutné celý systém řádně odvodnit, a proto vás vždy na podzim budeme kontaktovat, abychom se domluvili na termínu vypuštění. I to patří mezi naše služby, kterými se snažíme vám, našim klientům, zpříjemnit a zjednodušit život.",
         text: `
-            <p>Automatický zavlažovací systém jsme schopni navrhnout a realizovat na jakoukoli zahradu. Na velikosti, tvaru ani profilu nezáleží. Zavlažování lze plně přizpůsobit vašim konkrétním požadavkům, od zavlažování větších či menších travnatých ploch přes jednotlivé rostliny, keře, stromy nebo živé ploty. Automatické zavlažovací systémy lze instalovat na terasách a střešních zahradách, ale i k truhlíkům a květináčům.</p>
-            <p>Těmito systémy lze osadit různá sportoviště, jako jsou třeba fotbalová hřiště, antukové i travnaté tenisové kurty, rovněž tak parkurové či jiné jezdecké plochy, hotelová atria, zelené střechy, květinové stěny nebo obecní zeleň.</p>
+            <p>Automatický zavlažovací systém jsme schopni navrhnout a realizovat na jakoukoli zahradu. Na velikosti, tvaru ani profilu nezáleží. Zavlažování lze plně přizpůsobit vašim konkrétním požadavkům, od zavlažování větších či menších travnatých ploch přes jednotlivé rostliny, květinové a okrasné záhony, keře, stromy nebo živé ploty. Automatické zavlažovací systémy lze instalovat na terasách a střešních zahradách, ale i k truhlíkům a květináčům.</p>
+            <p>Těmito systémy lze osadit různá sportoviště, jako jsou třeba fotbalová hřiště nebo obecní zeleň.</p>
             <p>Námi dodávané zavlažovací systémy jsou vysoce efektivní nejen v rovnoměrnosti a kvalitě zálivky, ale i v množství spotřebované vody. Ve většině případů probíhá závlaha v nočních hodinách, což umožňuje denní užívání těchto ploch bez omezení.</p>
+            <p>Součástí našich řešení je také zavlažování záhonů, kde navrhujeme systém tak, aby každá část výsadby dostávala přesně tolik vody, kolik potřebuje. Díky tomu prospívají květiny, okrasné rostliny i další výsadba bez zbytečného přelévání nebo plýtvání vodou.</p>
         `,
         points: [
             "mít stále svěží a krásný trávník, květiny i stromy",
+            "zajistit pravidelnou závlahu trávníků i záhonů",
             "ušetřit čas a věnovat ho jiným aktivitám",
             "bezstarostně jezdit na letní dovolené",
             "zvýšit hodnotu vaší nemovitosti",
