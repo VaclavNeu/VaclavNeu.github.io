@@ -2,16 +2,13 @@ async function loadPartials() {
     const navbar = document.getElementById("navbar");
     const footer = document.getElementById("footer");
 
-    const isInPagesFolder = window.location.pathname.includes("/Pages/");
-    const basePath = isInPagesFolder ? "../" : "";
-
     if (navbar) {
-        const navbarResponse = await fetch(basePath + "Layout/Navbar.html");
+        const navbarResponse = await fetch("/Layout/Navbar.html");
         navbar.innerHTML = await navbarResponse.text();
     }
 
     if (footer) {
-        const footerResponse = await fetch(basePath + "Layout/Footer.html");
+        const footerResponse = await fetch("/Layout/Footer.html");
         footer.innerHTML = await footerResponse.text();
     }
 }
@@ -138,7 +135,7 @@ const serviceDetails = {
     jezirka: {
         title: "Zahradní jezírka",
         subtitle: "",
-        note: 'A proto jsme tu pro vás. <a href="../Pages/Kontakt.html">Kontaktujte nás</a> a dohodneme se, jaké jezírko uděláme na vaší zahradě.',
+        note: 'A proto jsme tu pro vás. <a href="/Pages/Kontakt/">Kontaktujte nás</a> a dohodneme se, jaké jezírko uděláme na vaší zahradě.',
         text: `
             <p>Zahradní jezírko dokáže dodat zahradě jedinečný charakter a vytvořit příjemné místo pro odpočinek i relaxaci. Kromě estetické funkce může posloužit také jako přirozené prostředí pro ryby a další drobné živočichy.</p>
             <p>Při návrhu jezírka je důležité promyslet jeho umístění, velikost i celkový tvar tak, aby co nejlépe zapadlo do okolního prostoru. Stejně podstatná je i volba vhodných materiálů a technického řešení, které zajistí dlouhou životnost a snadnou údržbu.</p>

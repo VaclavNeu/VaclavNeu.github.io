@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vaclavneu.github.io/</loc>
   </url>
   <url>
-    <loc>https://vaclavneu.github.io/Pages/Sluzby.html</loc>
+    <loc>https://vaclavneu.github.io/Pages/Sluzby/</loc>
   </url>
   <url>
-    <loc>https://vaclavneu.github.io/Pages/Kontakt.html</loc>
+    <loc>https://vaclavneu.github.io/Pages/Kontakt/</loc>
   </url>
   <url>
-    <loc>https://vaclavneu.github.io/Pages/Realizace.html</loc>
+    <loc>https://vaclavneu.github.io/Pages/Realizace/</loc>
   </url>
 </urlset>

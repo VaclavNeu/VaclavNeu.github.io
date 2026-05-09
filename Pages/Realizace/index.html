@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="cs" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Prohlédněte si ukázky realizací automatického zavlažování pro rodinné zahrady, parky a další venkovní plochy." />
+    <title>Realizace | Zavlažování na míru</title>
+    <meta property="og:title" content="Realizace | Zavlažování na míru">
+    <meta property="og:description" content="Ukázky realizací automatického zavlažování pro zahrady, parky a sportovní areály.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vaclavneu.github.io/Pages/Realizace/">
+    <meta property="og:image" content="https://vaclavneu.github.io/Obrazky/Zavlaha2.jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/Obrazky/Tomas_logo.png" />
+    <link rel="apple-touch-icon" href="/Obrazky/Tomas_logo.png" />
+
+    <link rel="stylesheet" href="../../app.css" />
+    <link rel="stylesheet" href="../../Layout/Navbar.css" />
+    <link rel="stylesheet" href="../../Layout/Footer.css" />
+    <link rel="stylesheet" href="../Realizace.css" />
+</head>
+<body>
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <header id="navbar"></header>
+
+    <main class="realizations-page">
+        <section class="realizations-hero">
+    <div class="realizations-hero-overlay">
+        <div class="realizations-hero-content">
+            <span class="realizations-badge">Naše práce</span>
+            <h1>Ukázky realizací</h1>
+           <p>
+    Prohlédněte si ukázky našich realizací automatického zavlažování pro rodinné zahrady,
+    okrasné záhony i větší venkovní plochy. Kliknutím na jednotlivé realizace si otevřete
+    galerii s více fotografiemi.
+</p>
+
+            <div class="realizations-hero-actions">
+                <a href="#realizace-grid" class="btn-main">Zobrazit realizace</a>
+                <a href="/Pages/Kontakt/" class="btn-ghost">Nezávazná poptávka</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="realizations-intro">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio</span>
+                    <h2>Realizace automatického zavlažování</h2>
+                    <p>
+                        Kliknutím na konkrétní realizaci si otevřete galerii s více fotografiemi.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="realizations-grid-section" id="realizace-grid">
+            <div class="container">
+                <div class="realizations-grid">
+
+                    <article class="realization-card"
+                             data-title="Okrasná zahrada"
+
+                             data-images="/Obrazky/Zavlaha2.jpeg,/Obrazky/Zavlaha3.jpeg,/Obrazky/Zavlaha5.jpeg,/Obrazky/Zavlaha6.jpeg,/Obrazky/Zavlaha7.jpeg,/Obrazky/ZavlahaRozdelana.jpeg">
+                        <div class="realization-image-wrapper">
+                            <img src="/Obrazky/Zavlaha3.jpeg" alt="Automatické zavlažování okrasné zahrady v Praze" loading="lazy" />
+                        </div>
+                        <div class="realization-content">
+                            <h3>Okrasná zahrada</h3>
+                           
+                            <p>Návrh a instalace automatické závlahy pro trávník, záhony a keřové partie.</p>
+                        </div>
+                    </article>
+
+                    <article class="realization-card"
+                             data-title="Sportovní areál"
+                             
+                             data-images="/Obrazky/Zavlaha4.jpeg,/Obrazky/Hriste.jpeg,/Obrazky/Hriste2.jpeg">
+                        <div class="realization-image-wrapper">
+                            <img src="/Obrazky/Zavlaha4.jpeg" alt="Zavlažovací systém pro sportovní areál v Brně" loading="lazy" />
+                        </div>
+                        <div class="realization-content">
+                            <h3>Sportovní areál</h3>
+                           
+                            <p>Realizace závlahového systému pro větší travnatou plochu s rovnoměrným pokrytím.</p>
+                        </div>
+                    </article>
+
+                    <article class="realization-card"
+                             data-title="Jezírka"
+                            
+                             data-images="/Obrazky/Jezirko1.jpeg,/Obrazky/Jezirko2.jpeg,/Obrazky/Jezirko3.jpeg,/Obrazky/Jezirko4.jpeg,/Obrazky/Jezirko5.jpeg,/Obrazky/Jezirko6.jpeg,/Obrazky/Jezirko7.jpeg,/Obrazky/Jezirko8.jpeg,/Obrazky/Jezirko9.jpeg">
+                        <div class="realization-image-wrapper">
+                            <img src="/Obrazky/Jezirko1.jpeg" alt="Automatické zavlažování jezírka v Plzni" loading="lazy" />
+                        </div>
+                        <div class="realization-content">
+                            <h3>Jezírka</h3>
+                            
+                            <p>Instalace a údržba okrasných jezírek</p>
+                        </div>
+                    </article>
+
+                    
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="gallery-modal" id="galleryModal" aria-hidden="true">
+        <div class="gallery-backdrop" id="galleryBackdrop"></div>
+
+        <div class="gallery-dialog" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+            <button class="gallery-close" id="galleryClose" aria-label="Zavřít galerii">&times;</button>
+
+            <div class="gallery-top">
+                <div>
+                    <h2 id="galleryTitle">Realizace</h2>
+                    <p id="galleryLocation"></p>
+                </div>
+                <div class="gallery-counter" id="galleryCounter">1 / 3</div>
+            </div>
+
+            <div class="gallery-slider" id="gallerySlider">
+                <button class="gallery-nav gallery-prev" id="galleryPrev" aria-label="Předchozí fotografie">&#10094;</button>
+
+                <div class="gallery-image-wrap">
+                    <img id="galleryImage" src="" alt="Fotografie realizace" />
+                </div>
+
+                <button class="gallery-nav gallery-next" id="galleryNext" aria-label="Další fotografie">&#10095;</button>
+            </div>
+
+            <div class="gallery-thumbs" id="galleryThumbs"></div>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script src="../../app.js"></script>
+    <script src="Realizace.js"></script>
+</body>
+</html>
