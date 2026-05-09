@@ -1,4 +1,4 @@
-/* ===== LIGHT THEME ===== */
+
 :root,
 [data-theme="light"] {
     --bg: #ffffff;
@@ -19,7 +19,7 @@
     --toggle-icon: "🌙";
 }
 
-/* ===== DARK THEME ===== */
+
 [data-theme="dark"] {
     --bg: #0e0e0e;
     --bg-alt: #161616;
@@ -39,7 +39,7 @@
     --toggle-icon: "☀️";
 }
 
-/* ===== RESET ===== */
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -50,7 +50,7 @@ html {
     scroll-behavior: auto;
 }
 
-/* Only smooth-scroll for anchor clicks, not all scrolling */
+
 @media (prefers-reduced-motion: no-preference) {
     html:focus-within {
         scroll-behavior: smooth;
@@ -68,14 +68,14 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Theme transition — only triggers on toggle, not scroll */
+
 html[data-theme] body,
 html[data-theme] nav,
 html[data-theme] .footer-container {
     transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }
 
-/* ===== TYPOGRAPHY ===== */
+
 h1, h2, h3 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
@@ -97,7 +97,7 @@ img {
     display: block;
 }
 
-/* ===== SCROLL REVEAL ===== */
+
 .reveal {
     opacity: 0;
     transform: translate3d(0, 24px, 0);
@@ -116,7 +116,7 @@ img {
 .reveal-delay-2 { transition-delay: 0.16s; }
 .reveal-delay-3 { transition-delay: 0.24s; }
 
-/* ===== PAGE LOADER ===== */
+
 #page-loader {
     position: fixed;
     inset: 0;
@@ -146,7 +146,7 @@ img {
     to { transform: rotate(360deg); }
 }
 
-/* ===== FORM VALIDATION ===== */
+
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid var(--green);
 }

@@ -8,10 +8,10 @@
     margin: 0 auto;
 }
 
-/* HERO */
+
 .realizations-hero {
     min-height: 88vh;
-    background: url("../Obrazky/Zavlaha1.jpeg") center center / cover no-repeat;
+    background: url("../Obrazky/Zavlaha7.jpeg") center center / cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;

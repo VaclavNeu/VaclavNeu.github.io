@@ -1,4 +1,4 @@
-/* ===== HOME ===== */
+
 .home {
     width: 100%;
     overflow: visible !important;
@@ -6,7 +6,7 @@
     overflow-y: visible !important;
 }
 
-/* ===== HERO ===== */
+
 .hero {
     min-height: 100vh;
     background-image: url('/Obrazky/Zavlaha1.jpg');
