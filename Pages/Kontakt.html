@@ -88,6 +88,9 @@
                         <input type="tel" name="telefon" placeholder="Telefon" />
                     </div>
 
+                   
+                    <input type="hidden" name="_replyto" id="replyto-field" />
+
                     <textarea name="zprava" placeholder="Zpráva"></textarea>
                     <button type="submit" class="submit-btn">Odeslat zprávu</button>
                 </form>
@@ -118,6 +121,13 @@
                 e.preventDefault();
 
                 contactError.style.display = "none";
+
+             
+                const emailInput = contactForm.querySelector('input[name="email"]');
+                const replytoField = document.getElementById("replyto-field");
+                if (emailInput && replytoField) {
+                    replytoField.value = emailInput.value;
+                }
 
                 const formData = new FormData(contactForm);
 
